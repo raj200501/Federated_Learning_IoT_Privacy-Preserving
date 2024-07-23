@@ -1,0 +1,99 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+pip-wheel-metadata/
+
+# Logs
+logs/
+*.log
+
+# AWS CLI configuration
+.aws/
+
+# Terraform files
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+*.tfvars
+*.tfstate.backup
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Unit test / coverage reports
+.coverage
+.coverage.*
+*.cover
+*.py,cover
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.coveragerc
+
+# Environments
+.env
+.env.*
+
+# MacOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.iml
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python environment files
+Pipfile.lock
+poetry.lock
+
+# S3 uploads
+s3/*.zip
+s3/*.gz
+s3/*.tar
+
+# Lambda deployment packages
+lambda/deployment_package/*.zip
+
+# Generated documentation
+/build/
+docs/_build/
+target/
+
+# Ansible
+*.retry
+
+# IDEs
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# System files
+Thumbs.db
+Desktop.ini
