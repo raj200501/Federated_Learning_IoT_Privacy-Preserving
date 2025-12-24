@@ -14,6 +14,24 @@ def create_model(input_shape):
     model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
     return model
 
+
+def create_mlp_model(input_shape, num_classes):
+    """
+    Create a lightweight MLP model for tabular IoT data.
+
+    Args:
+        input_shape (tuple): Shape of a single sample (num_features,).
+        num_classes (int): Number of output classes.
+    """
+    model = tf.keras.Sequential([
+        tf.keras.layers.InputLayer(input_shape=input_shape),
+        tf.keras.layers.Dense(64, activation='relu'),
+        tf.keras.layers.Dense(32, activation='relu'),
+        tf.keras.layers.Dense(num_classes, activation='softmax')
+    ])
+    model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    return model
+
 def main():
     data = load_data('./data_generation/synthetic_data/data')
     input_shape = data['x_train'].shape[1:]

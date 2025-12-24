@@ -30,3 +30,38 @@ Welcome to **Federated Learning for Privacy-Preserving Collaborative AI in IoT C
 ![network_performance](https://github.com/user-attachments/assets/d7a04059-7462-41b3-bc40-ac7b99dad838)
 ![comm_efficiency](https://github.com/user-attachments/assets/0fb03f7f-c031-4a05-94df-ed3b754f5054)
 ![system_model](https://github.com/user-attachments/assets/f9191dd4-17a5-4375-9cd6-ebf2ffe3e774)
+
+## ✅ Verified Quickstart
+
+These steps were executed from a clean environment and verified to run end-to-end.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python scripts/run_federated_demo.py
+```
+
+### One-command runner
+
+```bash
+python scripts/run_federated_demo.py --num-devices 20 --num-samples 200 --num-clients 5 --num-rounds 3
+```
+
+### One-command verification (smoke test)
+
+```bash
+./scripts/smoke_test.sh
+```
+
+## Troubleshooting
+
+- **`ModuleNotFoundError: No module named 'synthetic_data'`**
+  - Run from the repository root. A compatibility package is provided under `synthetic_data/` to keep legacy imports working.
+- **TensorFlow install issues**
+  - Use a Python virtual environment and install with `pip install -r requirements.txt` to pull `tensorflow-cpu`.
+- **No CSVs found in data directory**
+  - The demo script auto-generates data if no `.csv` files are present in `data_generation/synthetic_data/data`.
+
+- **Offline/air-gapped environments**
+  - If installing dependencies is not possible, `scripts/run_federated_demo.py` automatically switches to a lightweight mode that uses only the Python standard library for a basic end-to-end smoke run.
